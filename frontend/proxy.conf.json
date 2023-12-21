@@ -1,0 +1,7 @@
+{
+    "/DATA/*":{
+        "target":"http://localhost:3000/API",
+        "secure":false,
+        "logLevel":"debug"
+    }
+}

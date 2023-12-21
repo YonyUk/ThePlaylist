@@ -1,0 +1,128 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Test {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Track {
+  """Id of the soundtrack"""
+  ID: String!
+
+  """Name of the soundtrack"""
+  Name: String!
+
+  """Author of the soundtrack"""
+  Author: String!
+
+  """Reproductions that the soundtrack has"""
+  RepCount: Int!
+}
+
+type MutationResponse {
+  """Status of the operation result"""
+  Status: String!
+
+  """Message of the operation"""
+  Message: String!
+
+  """Id of the object created"""
+  ID: String!
+}
+
+type TrackResponse {
+  """Id of the soundtrack"""
+  ID: String!
+
+  """Name of the soundtrack"""
+  Name: String!
+
+  """Author of the soundtrack"""
+  Author: String!
+
+  """Reproductions that the soundtrack has"""
+  RepCount: Int!
+
+  """Link of this file"""
+  Link: String!
+}
+
+type PlaylistResponse {
+  """Id of the playlist"""
+  ID: String!
+
+  """Name of the playlist"""
+  Name: String!
+
+  """Date of upload of the playlist"""
+  Date: String!
+
+  """tracks of the playlist"""
+  Tracks: [Track!]!
+}
+
+type UploadLink {
+  """Url to upload files"""
+  Link: String!
+}
+
+type Query {
+  test(id: Int!): Test!
+  track(id: String!): TrackResponse!
+  playlists: [PlaylistResponse!]!
+  playlist(id: String!): PlaylistResponse!
+  tracks: [TrackResponse!]!
+}
+
+type Mutation {
+  createTest(createTestInput: CreateTestInput!): Test!
+  updateTest(updateTestInput: UpdateTestInput!): Test!
+  removeTest(id: Int!): Test!
+  updateTrack(updateTrackInput: UpdateTrackInput!): TrackResponse!
+  createPlaylist(createPlaylistInput: CreatePlaylistInput!): MutationResponse!
+  updatePlaylist(updatePlaylistInput: UpdatePlaylistInput!): MutationResponse!
+  removePlayList(id: String!): MutationResponse!
+  quitTrackFromPlayList(playlistid: String!, trackid: String!): MutationResponse!
+  askForUpload(filename: String!, playlistID: String!, mimetype: String!, author: String!): UploadLink!
+  removeTrack(trackid: String!): MutationResponse!
+}
+
+input CreateTestInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateTestInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input UpdateTrackInput {
+  """Name of the soundtrack"""
+  Name: String!
+
+  """Author of the soundtrack"""
+  Author: String!
+
+  """Id of the soundtrack"""
+  ID: String!
+
+  """Reproductions that the soundtrack has"""
+  RepCount: Int!
+}
+
+input CreatePlaylistInput {
+  """Name of the playlist"""
+  Name: String!
+}
+
+input UpdatePlaylistInput {
+  """Name of the playlist"""
+  Name: String!
+
+  """Id of the playlist"""
+  ID: String!
+}

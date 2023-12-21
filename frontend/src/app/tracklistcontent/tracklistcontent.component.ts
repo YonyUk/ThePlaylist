@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Track } from '../global.interfaces';
 
 @Component({
   selector: 'app-tracklistcontent',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./tracklistcontent.component.scss']
 })
 export class TracklistcontentComponent {
+
+  @Input()
+  Tracks!: Track[];
 
 }

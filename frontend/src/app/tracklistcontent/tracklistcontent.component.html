@@ -1,5 +1,7 @@
-<div class="tracklist">
-    <h1>Track</h1>
-    <h1>Author</h1>
-    <h1>Listened</h1>
-</div>
+<app-trackitem *ngFor="let track of Tracks" 
+[TrackID]="track.ID"
+[TrackName]="track.Name"
+[TrackAuthor]="track.Author"
+[TrackRepCount]="track.RepCount"></app-trackitem>
+<br>
+<br>

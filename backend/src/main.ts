@@ -21,6 +21,7 @@ import { writeFileSync } from 'fs';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
+  app.enableCors();
   // app.use(graphqlUploadExpress({ maxFileSize: 1000000, maxFiles: 10}));
   // app.setGlobalPrefix('API')
   await app.listen(3000);

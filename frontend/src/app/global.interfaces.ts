@@ -10,4 +10,5 @@ export interface PlayList {
     ID: string;
     Name: string;
     Date: Date;
+    Tracks: Track[];
 }

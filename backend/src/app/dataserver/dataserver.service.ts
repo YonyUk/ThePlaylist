@@ -51,7 +51,7 @@ export class DataserverService {
     this.ValidatorTokens.push(token);
     setTimeout(() => {
       this.ValidatorTokens = this.ValidatorTokens.filter(element => element.ID !== token.ID);
-    }, 60000)
+    }, 10000)
   }
 
 }

@@ -1,4 +1,30 @@
 <div class="content">
-    <app-tracklistcontent></app-tracklistcontent>
+    <app-tracklistcontent [Tracks]="Tracks"></app-tracklistcontent>
     <app-comentsroom></app-comentsroom>
+</div>
+<br>
+<br>
+<button type="submit" (click)="createTrackSelect()" *ngIf="Playlist"> Add track to a playlist</button>
+<button type="submit" (click)="createPlaylistSelect()" *ngIf="Track"> Create a new playlist</button>
+<div class="file-uploader" *ngIf="Track">
+    <form method="post" enctype="multipart/form-data">
+        <div>
+            <h3>Track name:</h3>
+            <input type="text" placeholder="TrackName" name="TrackName" [(ngModel)]="TrackName">
+            <h3>Author:</h3>
+            <input type="text" placeholder="Author" name="TrackAuthor" [(ngModel)]="TrackAuthor">
+            <input type="file" id="file" name="FileUploader" style="display: none;" accept="audio/mp3" (change)="loadFile($event)" />
+            <br>
+            <br>
+            <button type="submit" (click)="searchFile()"> Load file</button>
+            <button type="submit" (click)="uploadFile()"> Upload File </button>
+        </div>
+    </form>
+</div>
+<div class="playlist-creator" *ngIf="Playlist">
+    <h3>Name:</h3>
+    <input type="text" name="PlaylistName" id="PlaylistName" [(ngModel)]="PlaylistName" placeholder="Playlist's name">
+    <br>
+    <br>
+    <button type="submit" (click)="createPlaylist()"> Create playlist</button>
 </div>

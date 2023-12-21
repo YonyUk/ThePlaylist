@@ -42,3 +42,41 @@ query GetPlaylist($playlistid:String!){
     }
   }
 `;
+
+export const GET_UPLOAD_LINK = gql`
+mutation GetUploadLink(
+  $file:String!,
+  $playlistid:String!,
+  $mimetype:String!,
+  $author:String!
+){
+  askForUpload(
+    filename:$file,
+    playlistID:$playlistid,
+    mimetype:$mimetype,
+    author:$author
+  ){
+    Link
+  }
+}
+`;
+
+export const CREATE_PLAYLIST = gql`
+mutation CreatePlaylist($input:CreatePlaylistInput!){
+  createPlaylist(createPlaylistInput:$input){
+    Status
+    Message
+    ID
+  }
+}
+`;
+
+export const DELETE_TRACK_FROM_PLAYLIST = gql`
+ mutation DeletTrackFromPlaylist($trackid:String!,$playlistid:String!){
+  quitTrackFromPlayList(trackid:$trackid,playlistid:$playlistid){
+    Status
+    Message
+		ID
+  }
+}
+`;

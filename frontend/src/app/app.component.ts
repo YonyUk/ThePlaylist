@@ -8,6 +8,7 @@ import { Apollo } from 'apollo-angular';
 })
 export class AppComponent {
 
-  constructor(private apollo: Apollo) { }
+  constructor(private apollo: Apollo) {
+   }
 
 }

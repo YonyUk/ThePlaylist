@@ -1,0 +1,35 @@
+.store{
+    overflow-x: scroll;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.712);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    height: 40px;
+    padding: 5px;
+}
+
+.playlists{
+    display: flex;
+    justify-content: center;
+    width: 1900px;
+}
+
+.actions{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.store:hover{
+    height: 240px;
+    transition-duration: 500ms;
+}
+
+button{
+    color: rgb(255, 255, 255);
+    background-color: rgba(36, 36, 36, 0.397);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px;
+    border-radius: 15px;
+    margin-left: 10px;
+}

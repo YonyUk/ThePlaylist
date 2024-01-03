@@ -1,0 +1,9 @@
+<nav class="header">
+    <h3>Name</h3>
+    <h3>Author</h3>
+    <h3>Listened</h3>
+</nav>
+<hr>
+<div class="content">
+    <app-trackitem *ngFor="let track of PlayListItem.Tracks" [TrackItem]="track"></app-trackitem>
+</div>

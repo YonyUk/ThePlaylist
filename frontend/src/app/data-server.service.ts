@@ -1,12 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { Track, PlayList } from './global.interfaces';
-import { GET_TRACK, GET_PLAYLISTS, GET_PLAYLIST, GET_UPLOAD_LINK, CREATE_PLAYLIST, DELETE_TRACK_FROM_PLAYLIST } from './querys';
+import { GET_TRACK, GET_PLAYLISTS, GET_PLAYLIST, GET_UPLOAD_LINK, CREATE_PLAYLIST, DELETE_TRACK_FROM_PLAYLIST, DELETE_PLAYLIST } from './querys';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataServerService {
+
+  Error = false;
+
+  ErrorMessage = '';
 
   constructor(
     private readonly apollo: Apollo
@@ -20,6 +24,33 @@ export class DataServerService {
       mutation:CREATE_PLAYLIST,
       variables:{
         input
+      }
+    }).subscribe(({data,errors}) => {
+      if(errors){
+        this.Error = true;
+        this.ErrorMessage = (errors as any)[0];
+      }
+      else {
+        this.Error = false;
+        this.ErrorMessage = '';
+      }
+    });
+  }
+
+  async deletePlayList(id: string) {
+    await this.apollo.mutate({
+      mutation: DELETE_PLAYLIST,
+      variables: {
+        playlistid: id
+      }
+    }).subscribe(({data,errors}) => {
+      if(errors){
+        this.Error = true;
+        this.ErrorMessage = (errors as any)[0];
+      }
+      else {
+        this.Error = false;
+        this.ErrorMessage = '';
       }
     });
   }
@@ -48,6 +79,7 @@ export class DataServerService {
         playlistid:id
       }
     }).result()).data;
+
     return (result as any).playlist as PlayList;
   }
 
@@ -82,6 +114,7 @@ export class DataServerService {
       if (errors)
         document.write('!ERROR!');
     }));
+    this.apollo.client.cache.reset();
     return result;
   }
 }

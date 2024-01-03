@@ -3,6 +3,7 @@ import { gql } from 'apollo-angular';
 export const GET_TRACK = gql`
 query GetTrack($id:String!){
     track(id:$id){
+      ID
       Name
       Author
       RepCount
@@ -77,6 +78,16 @@ export const DELETE_TRACK_FROM_PLAYLIST = gql`
     Status
     Message
 		ID
+  }
+}
+`;
+
+export const DELETE_PLAYLIST = gql`
+mutation DeletePlayList($playlistid:String!){
+  removePlayList(id:$playlistid){
+    Status
+    Message
+    ID
   }
 }
 `;

@@ -1,0 +1,23 @@
+.input{
+
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+}
+
+.values{
+    background-color: rgba(36, 36, 36, 0.397);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+button,input{
+    color: rgb(255, 255, 255);
+    background-color: rgba(36, 36, 36, 0.397);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px;
+    border-radius: 15px;
+    margin-left: 10px;
+    outline: none;
+}

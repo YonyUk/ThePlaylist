@@ -9,11 +9,11 @@ import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
-import { PagetitleComponent } from './pagetitle/pagetitle.component';
-import { TracklistComponent } from './tracklist/tracklist.component';
-import { TracklistcontentComponent } from './tracklistcontent/tracklistcontent.component';
-import { ComentsroomComponent } from './comentsroom/comentsroom.component';
-import { TrackitemComponent } from './trackitem/trackitem.component';
+import { PlaylistComponent } from './playlist/playlist.component';
+import { TrackitemComponent } from './playlist/trackitem/trackitem.component';
+import { StoreComponent } from './store/store.component';
+import { PlaylistitemComponent } from './store/playlistitem/playlistitem.component';
+import { AddplaylistComponent } from './addplaylist/addplaylist.component';
 
 const uri = 'http://localhost:3000/graphql';
 
@@ -27,11 +27,11 @@ function createApollo(httplink: HttpLink): ApolloClientOptions<any> {
 @NgModule({
   declarations: [
     AppComponent,
-    PagetitleComponent,
-    TracklistComponent,
-    TracklistcontentComponent,
-    ComentsroomComponent,
+    PlaylistComponent,
     TrackitemComponent,
+    StoreComponent,
+    PlaylistitemComponent,
+    AddplaylistComponent,
   ],
   imports: [
     BrowserModule,

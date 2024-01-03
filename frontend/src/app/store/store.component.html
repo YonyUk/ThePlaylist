@@ -1,0 +1,10 @@
+<nav class="store">
+    Playlists
+    <div class="playlists">
+        <app-playlistitem *ngFor="let playlist of PlayLists" [PlayListItem]="playlist"
+        (PlayListEventEmitter)="selectPlayList($event)"></app-playlistitem>
+    </div>
+    <div class="actions">
+        <button type="submit" (click)="createPlayList()">➕</button>
+    </div>
+</nav>

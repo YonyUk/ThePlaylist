@@ -1,2 +1,19 @@
-<app-pagetitle></app-pagetitle>
-<app-tracklist></app-tracklist>
+<nav class="Title">
+    ThePlayList
+</nav>
+<div class="view" *ngIf="!CreatingPlayList">
+    <div class="playlist">
+        <app-playlist [PlayListItem]="CurrentPlayList"></app-playlist>
+    </div>
+    <form class="coments">
+
+    </form>
+</div>
+<div class="controls" *ngIf="!CreatingPlayList">
+    <button type="submit" (click)="deletePlayList()">Delete</button>
+</div>
+<app-addplaylist *ngIf="CreatingPlayList"
+(PlayListCreatedEventEmitter)="reload($event)"></app-addplaylist>
+<app-store class="playlists"
+(CreatePlaylistEmitter)="createPlayList($event)"
+(PlayListEmitter)="setPlayList($event)"></app-store>

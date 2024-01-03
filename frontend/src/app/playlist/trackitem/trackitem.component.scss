@@ -1,0 +1,25 @@
+.track{
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    color: rgba(255, 255, 255, 0.712);
+    background-color: rgba(36, 36, 36, 0.397);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 5px;
+    border-radius: 15px;
+    margin-left: 10px;
+}
+
+input[type="range"]{
+    box-sizing: content-box;
+    height: 1px;
+    mix-blend-mode: luminosity;
+    appearance: none;
+}

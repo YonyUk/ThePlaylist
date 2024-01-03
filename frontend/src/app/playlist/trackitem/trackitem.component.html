@@ -1,0 +1,11 @@
+<div class="track">
+    <h4> {{ TrackItem.Name }} </h4>
+    <h4> {{ TrackItem.Author }} </h4>
+    <h4> {{ TrackItem.RepCount }} </h4>
+</div>
+<audio src="{{TrackItem.Link}}" id="track-{{TrackItem.ID}}"></audio>
+<div class="controls">
+    <input type="range" id="bar-{{TrackItem.ID}}" value="{{Value}}" max="{{Max}}" contenteditable="true">
+    <button type="submit" (click)="playTrack()">{{ ButtonText }}</button>
+    <input type="range" id="volume-{{TrackItem.ID}}" value="{{Volume}}" max="100" contenteditable="true">
+</div>
